@@ -81,6 +81,7 @@ angular.module('portfolioApp').filter('object2Array', function () {
       }));
     });
     $scope.goToTab = function (tab) {
+      consol;
       if (_.isString(tab)) {
         $state.go(tab);
       } else {
@@ -126,6 +127,13 @@ angular.module('portfolioApp').config([
       url: '',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
+    }).state('home.hash', {
+      url: '/',
+      resolve: {
+        redirect: function ($state, $location) {
+          $location.path('');
+        }
+      }
     }).state('home.portfolio', {
       url: '/portfolio',
       controller: function ($scope, folders, $state) {
