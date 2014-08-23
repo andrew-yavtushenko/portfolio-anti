@@ -1,0 +1,139 @@
+{
+  "folders": [
+    {
+      "name": "art_photography",
+      "title": "fine art and photography",
+      "albums": [
+        "ira_valentin",
+        "test_album"
+      ]
+    }, {
+      "name": "wedding",
+      "title": "wedding and love story",
+      "albums": [
+        "wedding_album"
+      ]
+    }, {
+      "name": "kids_family",
+      "title": "kids and family",
+      "albums": [
+        "ira_valentin",
+        "test_album2"
+      ]
+    }
+  ],
+  "albums": [
+    {
+      "name": "ira_valentin",
+      "title": "ira and valentin",
+      "thumbnail": "http://www.anita-anti.com/images/img1.png",
+      "pictures":[
+        {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img1.png",
+            "big": "http://www.anita-anti.com/images/big-images/img1.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img2.png",
+            "big": "http://www.anita-anti.com/images/big-images/img2.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img3.png",
+            "big": "http://www.anita-anti.com/images/big-images/img3.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img4.png",
+            "big": "http://www.anita-anti.com/images/big-images/img4.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "test_album",
+      "title": "test album",
+      "thumbnail": "http://www.anita-anti.com/images/img2.png",
+      "pictures":[
+        {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img1.png",
+            "big": "http://www.anita-anti.com/images/big-images/img1.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img2.png",
+            "big": "http://www.anita-anti.com/images/big-images/img2.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img3.png",
+            "big": "http://www.anita-anti.com/images/big-images/img3.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img4.png",
+            "big": "http://www.anita-anti.com/images/big-images/img4.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "test_album2",
+      "title": "test album",
+      "thumbnail": "http://www.anita-anti.com/images/img3.png",
+      "pictures":[
+        {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img1.png",
+            "big": "http://www.anita-anti.com/images/big-images/img1.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img2.png",
+            "big": "http://www.anita-anti.com/images/big-images/img2.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img3.png",
+            "big": "http://www.anita-anti.com/images/big-images/img3.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img4.png",
+            "big": "http://www.anita-anti.com/images/big-images/img4.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "name": "wedding_album",
+      "title": "ira and valentin wedding",
+      "thumbnail": "http://www.anita-anti.com/images/img3.png",
+      "pictures":[
+        {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img1.png",
+            "big": "http://www.anita-anti.com/images/big-images/img1.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img2.png",
+            "big": "http://www.anita-anti.com/images/big-images/img2.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img3.png",
+            "big": "http://www.anita-anti.com/images/big-images/img3.jpg"
+          }
+        }, {
+          "urls": {
+            "small": "http://www.anita-anti.com/images/img4.png",
+            "big": "http://www.anita-anti.com/images/big-images/img4.jpg"
+          }
+        }
+      ]
+    }
+  ]
+}

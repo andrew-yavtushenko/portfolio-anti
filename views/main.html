@@ -1,0 +1,12 @@
+<div class="hero-unit">
+  <h1><a href="" ui-sref="home">'Allo, 'Allo!</a></h1>
+  <h3>{{allPictures.length}} photos total</h3>
+  <ul class="tabs">
+    <li ng-repeat="tab in tabs | object2Array | orderBy:'number'">
+      <a nref="" ui-sref="home.{{tab.name}}">
+        {{tab.name}}
+      </a>
+    </li>
+  </ul>
+  <div ui-view=""></div>
+</div>

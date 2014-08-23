@@ -1,0 +1,5 @@
+<li ng-repeat="album in getAlbumsForFolder(currentFolder)">
+  <div>{{album.title}}</div> 
+  <div>{{album.pictures.length}} photos</div>
+  <img ng-src="{{album.thumbnail}}" alt="">
+</li>
