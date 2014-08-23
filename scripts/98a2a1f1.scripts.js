@@ -84,6 +84,7 @@ angular.module('portfolioApp').filter('object2Array', function () {
       if (_.isString(tab)) {
         $state.go(tab);
       } else {
+        $scope.goToFolder(tab);
         $state.go('home.portfolio.folder', { folder: tab.name });
       }
     };
