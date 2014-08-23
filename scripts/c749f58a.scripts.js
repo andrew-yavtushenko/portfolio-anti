@@ -81,7 +81,6 @@ angular.module('portfolioApp').filter('object2Array', function () {
       }));
     });
     $scope.goToTab = function (tab) {
-      consol;
       if (_.isString(tab)) {
         $state.go(tab);
       } else {
