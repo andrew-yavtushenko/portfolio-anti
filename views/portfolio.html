@@ -1,8 +1,8 @@
 <h2>Portfolio</h2>
 <ul>
   <li ng-repeat="folder in folders">
-    <a href="" ng-click="goToFolder(folder)">{{folder.title}}</a>
-    <ul ui-view="" ng-show="isCurrentFolder(folder)">
+    <a href="" ui-sref="home.portfolio.folder({folder: folder.name, data: folder})" ng-click="goToFolder(folder)">{{folder.title}}</a>
+    <ul ui-view="" ui-sref-active="active" ng-show="isCurrentFolder(folder)">
     </ul>
   </li>
 </ul>

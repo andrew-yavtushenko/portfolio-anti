@@ -63,7 +63,9 @@ angular.module('portfolioApp').filter('object2Array', function () {
   '$scope',
   'Data',
   '$state',
-  function ($scope, Data, $state) {
+  '$location',
+  function ($scope, Data, $state, $location) {
+    window.state = $state;
     $scope.folders = [];
     $scope.albums = [];
     $scope.allPictures = [];
@@ -72,21 +74,20 @@ angular.module('portfolioApp').filter('object2Array', function () {
       $scope.folders = folders;
       $scope.currentFolder = folders[0];
     });
-    $scope.isCurrentFolder = function (folder) {
-      return folder == $scope.currentFolder;
-    };
     Data.getAlbums().$promise.then(function (albums) {
       $scope.albums = albums;
       $scope.allPictures = _.flatten(_.map(albums, function (album) {
         return album.pictures;
       }));
     });
+    $scope.goHome = function () {
+      $state.transitionTo('home', { location: 'replace' });
+    };
+    $scope.isCurrentFolder = function (folder) {
+      return folder == $scope.currentFolder;
+    };
     $scope.goToFolder = function (folder) {
       $scope.currentFolder = folder;
-      $state.transitionTo('home.portfolio.folder', {
-        folder: folder.name,
-        data: folder
-      });
     };
     $scope.getAlbumsForFolder = function (folder) {
       var folderAlbums = [];
@@ -134,9 +135,17 @@ angular.module('portfolioApp').config([
   '$stateProvider',
   function ($stateProvider) {
     $stateProvider.state('home', {
+      abstract: false,
       url: '',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
+    }).state('home.hash', {
+      url: '/',
+      resolve: {
+        redirect: function ($state, $location) {
+          $location.path('');
+        }
+      }
     }).state('home.portfolio', {
       url: '/portfolio',
       controller: function ($scope, folders, $state) {
@@ -154,6 +163,7 @@ angular.module('portfolioApp').config([
       templateUrl: 'views/folder.html',
       resolve: {
         folder: function ($stateParams, $state) {
+          console.log($stateParams);
           return $stateParams;
         }
       }
