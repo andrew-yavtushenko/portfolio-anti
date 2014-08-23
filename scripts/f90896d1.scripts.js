@@ -80,8 +80,12 @@ angular.module('portfolioApp').filter('object2Array', function () {
         return album.pictures;
       }));
     });
-    $scope.goHome = function () {
-      $state.transitionTo('home', { location: 'replace' });
+    $scope.goToTab = function (tab) {
+      if (_.isString(tab)) {
+        $state.go(tab);
+      } else {
+        $state.go('home.portfolio.folder', { folder: tab.name });
+      }
     };
     $scope.isCurrentFolder = function (folder) {
       return folder == $scope.currentFolder;
@@ -98,23 +102,6 @@ angular.module('portfolioApp').filter('object2Array', function () {
         });
       });
       return folderAlbums;
-    };
-    $scope.tabs = {
-      portfolio: {
-        name: 'portfolio',
-        number: 1,
-        clickable: true
-      },
-      info: {
-        name: 'info',
-        number: 2,
-        clickable: true
-      },
-      contact: {
-        name: 'contact',
-        number: 3,
-        clickable: true
-      }
     };
   }
 ]).controller('PageCtrl', [
@@ -139,17 +126,9 @@ angular.module('portfolioApp').config([
       url: '',
       templateUrl: 'views/main.html',
       controller: 'MainCtrl'
-    }).state('home.hash', {
-      url: '/',
-      resolve: {
-        redirect: function ($state, $location) {
-          $location.path('');
-        }
-      }
     }).state('home.portfolio', {
       url: '/portfolio',
       controller: function ($scope, folders, $state) {
-        console.log($scope);
       },
       templateUrl: 'views/portfolio.html',
       resolve: {
@@ -163,7 +142,6 @@ angular.module('portfolioApp').config([
       templateUrl: 'views/folder.html',
       resolve: {
         folder: function ($stateParams, $state) {
-          console.log($stateParams);
           return $stateParams;
         }
       }
