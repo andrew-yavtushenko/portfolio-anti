@@ -65,11 +65,13 @@ angular.module('portfolioApp').filter('object2Array', function () {
   '$state',
   '$location',
   function ($scope, Data, $state, $location) {
-    window.state = $state;
     $scope.folders = [];
     $scope.albums = [];
     $scope.allPictures = [];
     $scope.currentFolder = {};
+    $scope.isAtHome = function () {
+      return $state.current.name == 'home' || $state.current.name == 'home.hash';
+    };
     Data.getFolders().$promise.then(function (folders) {
       $scope.folders = folders;
       $scope.currentFolder = folders[0];
